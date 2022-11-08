@@ -1,0 +1,19 @@
+
+.questions {
+    text-align: left;
+    padding: 0 1rem;
+}
+.label {
+    display: block;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0.2em;
+    padding: 0.5em 1.5em;
+    border-radius: 25px;
+    background-color: #16161D;
+    font-weight: 400;
+    color: #ececff;
+    transition: 0.3s;
+    font-size: 1em;
+    border: 1px solid #ececff;
+}

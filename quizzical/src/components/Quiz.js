@@ -3,11 +3,12 @@ import { nanoid } from "nanoid";
 import Loading from "./Loading/Loading";
 import parse from "html-react-parser";
 import Confetti from "react-confetti";
-
+import Question from "./Question/Question"
+import classes from "./Question/Question.module.css";
 
 function Quiz() {
     /*****************  USE-STATE VARIABLES  *****************/
-    // State hook for perticular question
+    // State hook for particular question
     const [questions, setQuestions] = useState([]);
 
     // State hook for  all the questions
@@ -76,6 +77,7 @@ function Quiz() {
                 });
                 setQuestions(resultArray);
             });
+        console.log("API call");
     }, [reset]);
     /*********************** API call section ***********************************/
 
@@ -174,8 +176,13 @@ function Quiz() {
             {confetti}
             <section className="quiz-main">
                 <div className="quiz">
-                    <h1 className="heading">Quizzical</h1>
-                    {renderElement}
+                    <h1 className={classes.heading}>Quizzical</h1>
+                    <Question
+                        questions={questions}
+                        handleSubmit={handleSubmit}
+                        showResult={showResult}
+                        selectedAnswerClass={selectedAnswerClass}
+                    />
                     <hr></hr>
                     <div className={"result-section"}>
                         {showResult && (
